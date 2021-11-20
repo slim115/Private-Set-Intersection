@@ -10,5 +10,5 @@ cd privateSetIntersection
 ## Step 2
 Clone the github repository <br />
 ```
-gitclone https://github.com/slim115/Private-Set-Intersection/blob/master/4010_project_updated.py
+git clone https://github.com/slim115/Private-Set-Intersection/blob/master/4010_project_updated.py
 ```
