@@ -10,19 +10,19 @@ def xgcd(a,b):
         a, b = b, r
     return a, prevx, prevy
 
-# Encrypt m using key e in modulo p
-def enc(e,m,p):
-    return pow(m, e, p)
-
 # Key Generation for Grab and Gojek 
 def keygen(p):
     while True: 
-        e = secrets.randbelow(p) 
+        e = secrets.randbelow(p) #Encryption key 
         gcd, x, y = xgcd(e, p-1) 
         if gcd != 1: continue
-        d = x % (p-1) 
+        d = x % (p-1)  #Decryption key
         break
     return e,d
+
+# Encrypt m using key e in modulo p
+def enc(e,m,p):
+    return pow(m, e, p)
 
 # Encrypt over a list
 def enc_list(k, messages, p):
@@ -61,8 +61,13 @@ gojek_ciphertexts = enc_list(y, gojek_messages_digest, p)
 grab_double_enc = enc_list(x, gojek_ciphertexts, p)
 gojek_double_enc = enc_list(y, grab_ciphertexts, p)
 
+# Returns the number of drivers who are double-dipping
 num = len(gojek_double_enc.intersection(grab_double_enc))
 print("Number of intersections:", num)
+
+# # Returns the set of doubly encrypted intersection numbers
+# numlist = (gojek_double_enc.intersection(grab_double_enc))
+# print("Intersection list", numlist)
 doubledip = gojek_double_enc.intersection(grab_double_enc)
 
 # Getting the plaintext which has intersection
