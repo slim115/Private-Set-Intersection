@@ -54,9 +54,9 @@ Using the idea of Commutative Cipher and Asymmetric Key Exchange to perform Priv
 3. Use set of messages itself. Use a hash function before sending messages across the channel and since it is a one-way function, it provides a high level of security. After computation of the discrete logarithm, due to the exponent property; This works because - Commutative cipher (order of exponents does not matter)
 4. Now, we can encrypt a list of messages in this case, in other words, the information of the hired drivers from Grab and Gojek
 5. Sending the encrypted messages across to the parties and perform another encryption process again but this time with their own private keys to have doubly encrypted messages.
-6. Now with the doubly encrypted sets, they can send it to a Decentralized Anonymous Network where privacy is assumed to be kept, process the intersection, and return them
-7. Grab can then do the same computational steps for its message list, same for Gojek
-8. Now, they can compute the intersection between the cipher of their message list and the encrypted intersection list obtained from step 6 in their own private environment.
+6. Now with the doubly encrypted sets, they can send it to each other via a Session key, and compute the intersection set between the doubly encrypted sets 
+7. Grab can then do the same computational steps for its plaintext message list, same for Gojek
+8. Now, they can compute the intersection between the cipher of their message list and the encrypted intersection set obtained from step 6 in their own private environment.
 9. Obtain who are the drivers double-dipping!
 
 ![image](https://gateway.pinata.cloud/ipfs/Qmen8HGZxp6bzrbAunRWC9mF8wAfLASntneJNt6thwfyLU)
